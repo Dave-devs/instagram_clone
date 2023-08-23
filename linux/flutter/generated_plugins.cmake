@@ -4,8 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   dynamic_color
-  smart_auth
-  url_launcher_linux
+  file_selector_linux
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
     
                   } else if(snapshot.hasError) {
                     return Center(
-                      child: Text('Internal error occured: ${snapshot.error}'),
+                      child: Text('Internal error ocurred: ${snapshot.error}'),
                     );
                   }
                 } else if(snapshot.connectionState == ConnectionState.waiting) {

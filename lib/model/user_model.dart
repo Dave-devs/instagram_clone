@@ -9,7 +9,6 @@ class User {
   final String profilePic;
   final List followers;
   final List following;
-  final List post;
 
   const User({
     required this.name,
@@ -20,7 +19,6 @@ class User {
     required this.profilePic,
     required this.followers,
     required this.following,
-    required this.post,
   });
 
   Map<String, dynamic> toJson() {
@@ -33,7 +31,6 @@ class User {
       'photoUrl': profilePic,
       'followers': followers,
       'following': following,
-      'post': post,
     };
   }
 
@@ -49,7 +46,6 @@ class User {
       profilePic: snap['photoUrl'],
       followers: snap['followers'],
       following: snap['following'],
-      post: snap['post'],
     );
   }
 }

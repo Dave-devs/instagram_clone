@@ -3,11 +3,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:instagram_clone/core/palette.dart';
-import 'package:instagram_clone/features/login_page.dart';
+import 'package:instagram_clone/Features/login_page.dart';
 import 'package:instagram_clone/providers/user_provider.dart';
-import 'package:instagram_clone/responsive_layout/layout_builder.dart';
-import 'package:instagram_clone/responsive_layout/mobile_screen.dart';
-import 'package:instagram_clone/responsive_layout/web_screen.dart';
+import 'package:instagram_clone/Responsive_layout/layout_builder.dart';
+import 'package:instagram_clone/Responsive_layout/mobile_screen.dart';
+import 'package:instagram_clone/Responsive_layout/web_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
     
                   } else if(snapshot.hasError) {
                     return Center(
-                      child: Text('Internal error ocurred: ${snapshot.error}'),
+                      child: Text('Internal error occurred: ${snapshot.error}'),
                     );
                   }
                 } else if(snapshot.connectionState == ConnectionState.waiting) {

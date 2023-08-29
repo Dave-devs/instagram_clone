@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:instagram_clone/core/palette.dart';
+import 'package:instagram_clone/utils_methods/screen_list.dart';
 
 class MobileScreen extends StatefulWidget {
   const MobileScreen({super.key});
@@ -32,8 +33,6 @@ class _MobileScreenState extends State<MobileScreen> {
 
   // User user = Provider.of<UserProvider>(context).getUser;
 
-  
-
   @override
   void dispose() {
     super.dispose();
@@ -47,13 +46,7 @@ class _MobileScreenState extends State<MobileScreen> {
         controller: pageController,
         onPageChanged: onPageChanged,
         physics: const NeverScrollableScrollPhysics(),
-        children: const [
-          Center(child: Text('Home')),
-          Center(child: Text('Search')),
-          Center(child: Text('Reels')),
-          Center(child: Text('Notifications')),
-          Center(child: Text('Profile')),
-        ],
+        children: screenList
       ),
       bottomNavigationBar: CupertinoTabBar(
         onTap: navTapped,
@@ -65,33 +58,99 @@ class _MobileScreenState extends State<MobileScreen> {
         currentIndex: _pageIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined, color: _pageIndex == 0 ? Colors.white : Palette.whiteText,),
-            activeIcon: Icon(Icons.home, color: _pageIndex == 0 ? Colors.white : Palette.whiteText,),
+            icon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/home_outline.png',
+                color: _pageIndex == 0 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            activeIcon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/home_filled.png',
+                color: _pageIndex == 0 ? Colors.white : Palette.whiteText,
+              ),
+            ),
             label: 'Home',
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.search_outlined, color: _pageIndex == 1 ? Colors.white : Palette.whiteText,),
-            activeIcon: Icon(Icons.search, color: _pageIndex == 1 ? Colors.white : Palette.whiteText,),
-            label: 'Search'
+            icon: SizedBox(
+              width: 30.w,
+              height: 30.h,
+              child: Image.asset(
+                'assets/images/search_outline.png',
+                color: _pageIndex == 1 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            activeIcon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/search_filled.png',
+                color: _pageIndex == 1 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            label: 'Search',
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.face_outlined, color: _pageIndex == 2 ? Colors.white : Palette.whiteText,),
-            activeIcon: Icon(Icons.face_outlined, color: _pageIndex == 2 ? Colors.white : Palette.whiteText,),
-            label: 'Reels'
+            icon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/post_outline.png',
+                color: _pageIndex == 2 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            activeIcon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/post_filled.png',
+                color: _pageIndex == 2 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            label: 'Posts',
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_outline, color: _pageIndex == 3 ? Colors.white : Palette.whiteText,),
-            activeIcon: Icon(Icons.favorite, color: _pageIndex == 3 ? Colors.white : Palette.whiteText,),
-            label: 'Notifications'
+            icon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/passion_outline.png',
+                color: _pageIndex == 3 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            activeIcon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/passion_filled.png',
+                color: _pageIndex == 3 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            label: 'Notifications',
           ),
-
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline, color: _pageIndex == 4 ? Colors.white : Palette.whiteText,),
-            activeIcon: Icon(Icons.person, color: _pageIndex == 4 ? Colors.white : Palette.whiteText,),
-            label: 'Profile'
+            icon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/user_outline.png',
+                color: _pageIndex == 4 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            activeIcon: SizedBox(
+              width: 24.w,
+              height: 24.h,
+              child: Image.asset(
+                'assets/images/user_filled.png',
+                color: _pageIndex == 4 ? Colors.white : Palette.whiteText,
+              ),
+            ),
+            label: 'Profile',
           ),
         ],
       ),
